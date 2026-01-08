@@ -25,14 +25,14 @@ This project serves as a sample use case for **Agentic Workflows**, moving beyon
 
 The system follows a multi-step reasoning loop:
 
-1. **Router** (Llama 3 via Groq): The brain that parses user input and selects tools.
+1. **Router** (Openai via Groq): The brain that parses user input and selects tools.
 2. **Memory** (RunnableWithMessageHistory): Stores conversation context (Session State).
 3. **Retrieval Tool** (ChromaDB): Converts queries like "sinking boat" into vector embeddings to find semantically similar movies (e.g., "Titanic").
 4. **Action Tool** (Python): Executes the booking logic and updates the local `bookings.txt` record.
 
 ## 🛠️ Tech Stack
 
-- **LLM**: Llama 3-70b (via Groq API for ultra-fast inference)
+- **LLM**: Openai (via Groq API for ultra-fast inference)
 - **Orchestration**: LangChain
 - **Vector Store**: ChromaDB (Local persistent storage)
 - **Embeddings**: HuggingFace (`all-MiniLM-L6-v2`)
@@ -99,9 +99,6 @@ python agent.py
 - **Database**: Migrate `bookings.txt` to an SQL database (SQLite/PostgreSQL).
 - **Multi-Agent**: Separate the "Searcher" and "Booker" into two distinct agents using LangGraph.
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
